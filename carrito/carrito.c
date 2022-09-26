@@ -1,9 +1,9 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "carrito.h"
 #include "../leer_archivo/leer_archivo.h"
+
 // Creacion del carro y elementos
 
 Carrito nuevo_carro() {return NULL;}
@@ -14,6 +14,7 @@ Carrito nuevo_elemento(Producto p, int n) {
   elemento->cantidad = n;
   elemento->sig = NULL;
 }
+
 
 // Operaciones de modificacion del carro
 
@@ -81,9 +82,7 @@ Carrito eliminar_del_carro(Carrito *carro, char id[ID_SIZE], int cantidad) {
   return NULL;
 }
 
-Carrito lee_carro(FILE *archivo) {
 
-}
 // Operaciones de impresion del carro
 
 void imprimir_carro(Carrito carro) {
@@ -101,10 +100,23 @@ void imprimir_carro(Carrito carro) {
   }
 }
 
-// Guardar carro en archivo
 
+// Operaciones con archivo
+
+/* Formato de archivo de carrito 
+  id
+  nombre
+  precio
+  cantidad
+  
+  id
+  nombre
+  ...
+*/
+
+//Guarda el carrito en la ruta correspondiente
 void guardar_carro(Carrito carro, char ruta[25]) {
-  FILE* archivo = fopen(ruta, "w");
+  FILE* archivo = abrir_archivo(ruta, "w");
   
   // Se ejecuta en caso de que se haya abierto el archivo correctamente
   if (archivo != NULL) {
@@ -114,7 +126,7 @@ void guardar_carro(Carrito carro, char ruta[25]) {
 
     while (aux != NULL) {
       tmp = aux->producto;
-      fprintf(archivo, "%s\n%s\n%.2f\n\n", tmp.id, tmp.nombre, tmp.precio);
+      fprintf(archivo, "%s\n%s\n%.2f\n%d\n\n", tmp.id, tmp.nombre, tmp.precio, aux->cantidad);
       aux = aux->sig;
     }
     fclose(archivo);
@@ -122,6 +134,32 @@ void guardar_carro(Carrito carro, char ruta[25]) {
   else
     printf("\n\t\t¡Error al guardar el carrito!\n");
 }
+
+// Lee el archivo de carrito, recibe la ruta del archivo
+Carrito leer_carro(char ruta[]) {
+  FILE *archivo = abrir_archivo(ruta, "r");
+  Carrito carro = nuevo_carro();
+
+  // Se ejecuta solo si el archivo se abre correctamente
+  if (archivo != NULL) {
+    Producto tmp;
+    int cantidad;
+    char cad[5];
+
+    // Lee hasta el final del archivo
+    while (!feof(archivo)) {
+      // Lectura de producto y cantidad
+      tmp = leer_producto_archivo(archivo);
+      fscanf(archivo, "%d\n", &cantidad);
+      // Creacion de objeto en el carrito
+      add_al_carro(&carro, tmp, cantidad);
+    } 
+  }
+
+  fclose(archivo);
+  return carro;
+}
+
 
 // Eliminacion del carro y liberacion de memoria
 
