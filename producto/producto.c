@@ -1,9 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "../leer_archivo/leer_archivo.h"
 #include "producto.h"
 
-Producto leer_producto() {
+Producto leer_producto_archivo(FILE *archivo) {
+  Producto prod;
+  if (archivo != NULL && !feof(archivo)) {
+    leer_cadena(archivo, ID_SIZE, &prod.id[0]);
+    leer_cadena(archivo, NAME_MAX_SIZE, &prod.nombre[0]);
+    fscanf(archivo, "%f\n", &prod.precio);
+  }
+  return prod;
+}
+
+Producto leer_producto_teclado() {
   float precio;
   char id[ID_SIZE], nombre[NAME_MAX_SIZE];
 
@@ -30,7 +41,7 @@ Producto leer_producto() {
 }
 
 void imprimir_producto(Producto p) {
-  printf("\n\t\tNombre de producto: %s\n", p.nombre);
-  printf("\t\tId: %s\n", p.id);
+  printf("\n\t\tId: %s\n", p.id);
+  printf("\t\tNombre de producto: %s\n", p.nombre);
   printf("\t\tPrecio: $%.2f\n", p.precio);
 }
