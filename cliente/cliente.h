@@ -14,6 +14,7 @@ typedef struct CLIENTE {
 } Cliente;
 
 // Operaciones de administración del cliente
-Cliente nuevo_cliente();
 Cliente carga_cliente();
+Cliente lee_cliente();
+Cliente nuevo_cliente();
 void guarda_cliente(Cliente);
