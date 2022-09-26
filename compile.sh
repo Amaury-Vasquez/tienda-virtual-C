@@ -1,1 +1,1 @@
-gcc main.c carrito/carrito.c producto/producto.c -o main 
+gcc main.c carrito/carrito.c producto/producto.c leer_archivo/leer_archivo.c -o main 
