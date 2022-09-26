@@ -1,2 +1,1 @@
-./compile.sh
-./main < entrada.txt
+./compile.sh && ./main < entrada.txt
