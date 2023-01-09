@@ -27,6 +27,7 @@ void imprimir_carro(Carrito);
 // Operaciones con archivo
 void guardar_carro(Carrito, char []);
 Carrito leer_carro(char []);
+
 // Borrar carro y liberar memoria
 void borrar_carro(Carrito *);
 
