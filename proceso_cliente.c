@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 #include "memoria/memoria.h"
+#include "usuario/usuario.h"
 
 int main() {
-  int region_compartida = crear_region_carrito();
-  Carrito *carrito = obtener_carrito_compartido(region_compartida);
-  printf("Carrito obtenido");
-  Carrito aux = *carrito;
+  int respuesta;
+  imprime_menu();
+  scanf("%d", &respuesta);
   
-  // printf("%d\n %d\n", aux->cantidad, (int) (aux->sig));
-  imprimir_carro(*carrito);
-  borrar_carro(carrito);
+  // int region_compartida = crear_region_catalogo();
+  // Catalogo *catalogo = obtener_catalogo_compartido(region_compartida);
+  // imprimir_catalogo(*catalogo);
   return 0;
 }

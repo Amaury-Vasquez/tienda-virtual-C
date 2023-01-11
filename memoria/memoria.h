@@ -22,14 +22,16 @@
 #define LLAVE_CARRITO 'u'
 #define PERMISOS S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH | IPC_CREAT
 
+
+
 void verifica(int);
 key_t crear_llave(char *, char);
 int crear_region_clientes(); 
 int crear_region_catalogo();
 int crear_region_carrito();
 
-Cliente *obtener_cliente_compartido(int);
+Clientes_compartido *obtener_cliente_compartido(int);
 Catalogo *obtener_catalogo_compartido(int);
-Carrito *obtener_carrito_compartido(int);
+Rutas_carrito *obtener_carrito_compartido(int);
 
 #endif

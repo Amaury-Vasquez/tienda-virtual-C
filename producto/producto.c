@@ -40,6 +40,13 @@ Producto leer_producto_teclado() {
   return nuevo_producto;
 }
 
+Producto producto_vacio() {
+  Producto vacio;
+  strcpy(&vacio.id[0], "");
+  strcpy(&vacio.nombre[0], "");
+  vacio.precio = 0.0;
+}
+
 void imprimir_producto(Producto p) {
   printf("\n\t\tId: %s\n", p.id);
   printf("\t\tNombre de producto: %s\n", p.nombre);

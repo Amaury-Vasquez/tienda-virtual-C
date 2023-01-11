@@ -144,7 +144,6 @@ Carrito leer_carro(char ruta[]) {
   if (archivo != NULL) {
     Producto tmp;
     int cantidad;
-    char cad[5];
 
     // Lee hasta el final del archivo
     while (!feof(archivo)) {

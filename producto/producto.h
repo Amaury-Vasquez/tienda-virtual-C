@@ -12,6 +12,7 @@ typedef struct Prod {
 
 Producto leer_producto_archivo();
 Producto leer_producto_teclado();
+Producto producto_vacio();
 void imprimir_producto(Producto);
 
 #endif

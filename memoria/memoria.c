@@ -15,26 +15,26 @@ key_t crear_llave(char nombre_region[], char llave_region) {
 
 int crear_region_clientes() {
   key_t llave_memoria = crear_llave(ARCHIVO_CLIENTES, LLAVE_CLIENTES);
-  int region_compartida = shmget(llave_memoria, sizeof(struct CLIENTE), PERMISOS);
+  int region_compartida = shmget(llave_memoria, sizeof(struct CLIENTES_COMPARTIDO), PERMISOS);
   verifica(region_compartida);
   return region_compartida;
 }
 
 int crear_region_carrito() {
   key_t llave_memoria = crear_llave(ARCHIVO_CARRITO, LLAVE_CARRITO);
-  int region_compartida = shmget(llave_memoria, sizeof(struct CARRO*), PERMISOS);
+  int region_compartida = shmget(llave_memoria, sizeof(struct RUTAS_CARRITO), PERMISOS);
   verifica(region_compartida);
   return region_compartida;
 }
 
 int crear_region_catalogo() {
   key_t llave_memoria = crear_llave(ARCHIVO_CATALOGO, LLAVE_CATALOGO);
-  int region_compartida = shmget(llave_memoria, sizeof(struct CARRO), PERMISOS);
+  int region_compartida = shmget(llave_memoria, sizeof(struct CATALOGO), PERMISOS);
   verifica(region_compartida);
   return region_compartida;
 }
 
-Cliente *obtener_cliente_compartido(int region_compartida) {
+Clientes_compartido *obtener_cliente_compartido(int region_compartida) {
   return shmat(region_compartida, 0, 0);
 }
 
@@ -42,6 +42,6 @@ Catalogo *obtener_catalogo_compartido(int region_compartida) {
   return shmat(region_compartida, 0, 0);
 }
 
-Carrito *obtener_carrito_compartido(int region_compartida) {
+Rutas_carrito *obtener_carrito_compartido(int region_compartida) {
   return shmat(region_compartida, 0, 0);
 }

@@ -13,6 +13,9 @@ struct CARRO {
 
 typedef struct CARRO* Carrito;
 
+typedef struct RUTAS_CARRITO {
+  char rutas[100][30];
+} Rutas_carrito;
 // Creacion del carro y elementos
 Carrito nuevo_carro();
 Carrito nuevo_elemento(Producto, int);
