@@ -1,1 +1,1 @@
-./compile.sh && ./main
+./compile.sh && ./proceso_servidor
