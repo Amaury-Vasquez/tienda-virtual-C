@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 #include "memoria/memoria.h"
 #include "semaforo/semaforo.h"
@@ -22,22 +23,31 @@ int main() {
   int region_carrito = crear_region_carrito();
   Rutas_carrito *rutas_carrito = obtener_carrito_compartido(region_carrito);
   clientes_compartidos->num_clientes = carga_nombre_clientes("./cliente/clientes.txt", rutas_carrito->rutas);
+  for (int i = 0; i < clientes_compartidos->num_clientes; i++) {
+    strcpy(clientes_compartidos->clientes[i].name, rutas_carrito->rutas[i]);
+    char ruta[100] = "./cliente/datos/";
+    strcat(ruta, rutas_carrito->rutas[i]);
+    printf("%s", ruta);
+    FILE *archivo = abrir_archivo(ruta, "r");
+    leer_cadena(archivo, PASSWORD_SIZE, &(clientes_compartidos->clientes[i].password[0]));
+    fclose(archivo);
+  }
+  for(int i = 0; i < clientes_compartidos->num_clientes; i++) {
+    imprime_cliente(clientes_compartidos->clientes[i]);
+  }
   int semaforo_servidor = obtener_semaforo_servidor();
+  // int semaforo_cliente = obtener_semaforo_cliente();
+
   while (1) {
     printf("Esperando peticiones...");
     down(semaforo_servidor);
     guardar_catalogo(*catalogo, "catalogo/catalogo.txt");
   }
+  shmdt(&clientes_compartidos);
+  shmdt(&rutas_carrito);
+  shmdt(&catalogo);
   return 0;
 }
-  // for(int i = 0; i < clientes_compartidos->num_clientes; i++) {
-  //   if(strcmp(rutas_carrito->rutas[i], "") != 0) {
-  //     char ruta[100] = "./cliente/datos/";
-  //     strcat(ruta, rutas_carrito->rutas[i]);
-  //     FILE *archivo = fopen(ruta, "w");
-  //     fclose(archivo);
-  //   }
-  // }
 
 void term(int sigum) {
   printf("\nTerminando proceso...\n");

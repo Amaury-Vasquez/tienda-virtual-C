@@ -9,6 +9,6 @@ void imprime_error();
 char *lee_usuario();
 char *lee_contrasena();
 void imprime_menu();
-Cliente menu(int);
-Cliente inicio_sesion();
+Cliente menu(int, Clientes_compartido *);
+Cliente inicio_sesion(Clientes_compartido *);
 #endif

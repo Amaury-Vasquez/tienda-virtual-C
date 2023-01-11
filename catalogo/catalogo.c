@@ -57,4 +57,5 @@ void guardar_catalogo(Catalogo catalogo, char *ruta) {
       i++;    
     }
   }
+  fclose(archivo);
 }

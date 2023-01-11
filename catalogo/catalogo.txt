@@ -65,7 +65,7 @@ Pasta - Lasagne, Fresh
 
 commercialF2022
 Flower - Commercial Spider
-73.6
+73.60
 77
 
 everfreshPt2022 
@@ -140,7 +140,7 @@ Broccoli - Fresh
 
 chocolateWt2022
 Chocolate - White
-1.5
+1.50
 96
 
 mapleSyrupp2022
@@ -255,7 +255,7 @@ Coconut - Whole
 
 chocolateSS2022
 Chocolate - Semi Sweet, Calets
-24.0
+24.00
 55
 
 wineValpoMs2022
@@ -310,7 +310,7 @@ Cookies Oatmeal Raisin
 
 porkLoinCts2022
 Pork Loin Cutlets
-6.8
+6.80
 53
 
 pureeBlackc2022
@@ -365,7 +365,7 @@ Plasticforkblack
 
 oreganoDryR2022
 Oregano - Dry, Rubbed
-93.2
+93.20
 88
 
 towelRollWt2022
@@ -385,7 +385,7 @@ Chicken - Wieners
 
 ecolabMkkln2022
 Ecolab - Mikroklene 4/4 L
-33.5
+33.50
 30
 
 sugarSndaSr2022
@@ -490,17 +490,17 @@ Venison - Denver Leg Boneless
 
 rosemaryDry2022
 Rosemary - Dry
-39.0
+39.00
 30
 
 blackbeMl202022
 Jam - Blackberry, 20 Ml Jar
-43.7
+43.70
 27
 
 saltedCodBs2022
 Cod - Salted, Boneless
-23.2
+23.20
 21
 
 sauceHpSuce2022
@@ -517,3 +517,4 @@ hotchocVdng2022
 Hot Choc Vending
 71.79
 37
+
