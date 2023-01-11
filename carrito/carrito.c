@@ -47,7 +47,7 @@ void add_al_carro(Carrito *carro, Producto producto, int n) {
 Carrito eliminar_del_carro(Carrito *carro, char id[ID_SIZE], int cantidad) {
   if (*carro != NULL) {
     Carrito p = *carro, q = NULL;
-    while (p != NULL) {
+    while (p != NULL){
 
       // Se ejecuta si encuentra coincidencias
       if (strcmp(id, p->producto.id) == 0) {
