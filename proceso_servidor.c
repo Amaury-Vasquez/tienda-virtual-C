@@ -13,14 +13,14 @@ int main() {
   int region_carrito = crear_region_carrito();
   Rutas_carrito *rutas_carrito = obtener_carrito_compartido(region_carrito);
   clientes_compartidos->num_clientes = carga_nombre_clientes("./cliente/clientes.txt", rutas_carrito->rutas);
+    for(int i = 0; i < clientes_compartidos->num_clientes; i++) {
+    if(strcmp(rutas_carrito->rutas[i], "") != 0) {
+      char ruta[100] = "./carrito/datos/";
+      strcat(ruta, rutas_carrito->rutas[i]);
+      FILE *archivo = fopen(ruta, "w");
+      fclose(archivo);
+    }
+  }
   sleep(50);
   return 0;
 }
-  // for(int i = 0; i < clientes_compartidos->num_clientes; i++) {
-  //   if(strcmp(rutas_carrito->rutas[i], "") != 0) {
-  //     char ruta[100] = "./cliente/datos/";
-  //     strcat(ruta, rutas_carrito->rutas[i]);
-  //     FILE *archivo = fopen(ruta, "w");
-  //     fclose(archivo);
-  //   }
-  // }
