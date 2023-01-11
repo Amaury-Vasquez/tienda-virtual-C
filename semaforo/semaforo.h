@@ -10,7 +10,7 @@
 #include<sys/sem.h>
 #include<sys/types.h>
 
-#define PERMISOS 0644
+#define PERMISOS_SEMAFORO 0644
 
 int crea_semaforo(key_t llave, int valor_inicial);
 void down(int semid);

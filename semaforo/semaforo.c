@@ -1,7 +1,7 @@
 #include "semaforo.h"
 
 int crea_semaforo(key_t llave, int valor_inicial) {
-  int semid = semget(llave, 1, IPC_CREAT | PERMISOS);
+  int semid = semget(llave, 1, IPC_CREAT | PERMISOS_SEMAFORO);
   if (semid == -1)
     return -1;
   semctl(semid, 0, SETVAL, valor_inicial);
