@@ -16,8 +16,8 @@ int main() {
 
   int region_catalogo = crear_region_catalogo();
   Catalogo *catalogo = obtener_catalogo_compartido(region_catalogo);
-  *catalogo = leer_catalogo("catalogo/catalogo.txt");
-  imprimir_catalogo(*catalogo);
+  *catalogo = leer_catalogo("./catalogo/catalogo.txt");
+  // imprimir_catalogo(*catalogo);
   int region_clientes = crear_region_clientes();
   Clientes_compartido *clientes_compartidos = obtener_cliente_compartido(region_clientes);
   int region_carrito = crear_region_carrito();
@@ -27,19 +27,14 @@ int main() {
     strcpy(clientes_compartidos->clientes[i].name, rutas_carrito->rutas[i]);
     char ruta[100] = "./cliente/datos/";
     strcat(ruta, rutas_carrito->rutas[i]);
-    printf("%s", ruta);
     FILE *archivo = abrir_archivo(ruta, "r");
     leer_cadena(archivo, PASSWORD_SIZE, &(clientes_compartidos->clientes[i].password[0]));
     fclose(archivo);
   }
-  for(int i = 0; i < clientes_compartidos->num_clientes; i++) {
-    imprime_cliente(clientes_compartidos->clientes[i]);
-  }
   int semaforo_servidor = obtener_semaforo_servidor();
   // int semaforo_cliente = obtener_semaforo_cliente();
-
   while (1) {
-    printf("Esperando peticiones...");
+    printf("Esperando peticiones...\n");
     down(semaforo_servidor);
     guardar_catalogo(*catalogo, "catalogo/catalogo.txt");
   }

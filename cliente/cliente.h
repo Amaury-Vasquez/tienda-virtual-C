@@ -25,10 +25,10 @@ typedef struct CLIENTES_COMPARTIDO {
 
 // Operaciones de administración del cliente
 int carga_nombre_clientes(char *ruta, char [][CLIENT_NAME_MAX_SIZE]);
-// Cliente lee_cliente();
+Cliente lee_nuevo_cliente(Cliente clientes[], int n);
 // Cliente nuevo_cliente();
-void guarda_cliente(Cliente);
+void guarda_cliente(Cliente, char *);
 void imprime_cliente(Cliente);
-int verifica_existencia(Cliente cliente, char clientes[][CLIENT_NAME_MAX_SIZE], int n);
+int verifica_existencia(char nombre[CLIENT_NAME_MAX_SIZE], Cliente clientes[], int n);
 
 #endif

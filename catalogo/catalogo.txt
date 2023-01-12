@@ -59,7 +59,7 @@ Waffle Stix
 8
 
 lasagnePast2022
-Pasta - Lasagne, Fresh
+"Pasta - Lasagne, Fresh"
 87.82
 9
 
@@ -89,7 +89,7 @@ Tea - Herbal Sweet Dreams
 100
 
 wineNiagara2022
-Wine - Niagara,vqa Reisling
+"Wine - Niagara,vqa Reisling"
 15.07
 82
 
@@ -159,7 +159,7 @@ Appetizer - Mushroom Tart
 54
 
 beefBabyLvr2022 
-Beef - Baby, Liver
+"Beef - Baby, Liver"
 92.93
 92
 
@@ -209,7 +209,7 @@ Trout Rainbow Whole
 94
 
 tenderloinU2022
-Veal - Tenderloin, Untrimmed
+"Veal - Tenderloin, Untrimmed"
 47.52
 7
 
@@ -254,7 +254,7 @@ Coconut - Whole
 17
 
 chocolateSS2022
-Chocolate - Semi Sweet, Calets
+"Chocolate - Semi Sweet, Calets"
 24.00
 55
 
@@ -269,7 +269,7 @@ Onions - Cooking
 57
 
 breadRollCD2022
-Bread - Roll, Canadian Dinner
+"Bread - Roll, Canadian Dinner"
 20.37
 11
 
@@ -279,7 +279,7 @@ Pepper - Roasted Red
 90
 
 lentilsRedD2022 
-Lentils - Red, Dry
+"Lentils - Red, Dry"
 52.73
 15
 
@@ -339,7 +339,7 @@ Trueblue - Blueberry Cranberry
 20
 
 juiceGrapeW2022
-Juice - Grape, White
+"Juice - Grape, White"
 18.59
 90
 
@@ -364,7 +364,7 @@ Plasticforkblack
 12
 
 oreganoDryR2022
-Oregano - Dry, Rubbed
+"Oregano - Dry, Rubbed"
 93.20
 88
 
@@ -399,7 +399,7 @@ Tea - Herbal Orange Spice
 96
 
 pastaElbows2022
-Pasta - Elbows, Macaroni, Dry
+"Pasta - Elbows, Macaroni, Dry"
 27.48
 68
 
@@ -434,12 +434,12 @@ Pineapple - Golden
 32
 
 mushroomMrD2022
-Mushroom - Morels, Dry
+"Mushroom - Morels, Dry"
 84.83
 26
 
 blackberryJ2022
-Jam - Blackberry, 20 Ml Jar
+"Jam - Blackberry, 20 Ml Jar"
 8.73
 75
 
@@ -459,7 +459,7 @@ Cocoa Powder - Natural
 60
 
 pastaLFresh2022
-Pasta - Lasagne, Fresh
+"Pasta - Lasagne, Fresh"
 69.53
 40
 
@@ -474,7 +474,7 @@ Veal - Nuckle
 67
 
 pepperBlack2022
-Pepper - Black, Whole
+"Pepper - Black, Whole"
 59.43
 85
 
@@ -494,27 +494,27 @@ Rosemary - Dry
 30
 
 blackbeMl202022
-Jam - Blackberry, 20 Ml Jar
+"Jam - Blackberry, 20 Ml Jar"
 43.70
 27
 
 saltedCodBs2022
-Cod - Salted, Boneless
+"Cod - Salted, Boneless"
 23.20
 21
 
 sauceHpSuce2022
 Sauce - Hp
 60.78
-4
+3
 
 pectinpectn2022
 Pectin
 40.63
-44
+0
 
 hotchocVdng2022
 Hot Choc Vending
 71.79
-37
+0
 

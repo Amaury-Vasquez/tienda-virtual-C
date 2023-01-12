@@ -18,9 +18,24 @@ int main() {
 
   int respuesta;
   imprime_menu();
+  int borrar = 0;
   scanf("%d", &respuesta);
   Cliente cliente = menu(respuesta, clientes_compartidos);
-  imprime_cliente(cliente);
+  Carrito carrito;;
+  if (respuesta == 2 || respuesta == 1) {
+    char ruta[100] = "./carrito/datos/";
+    strcat(ruta, cliente.name);
+    if (respuesta == 2){
+      guarda_cliente(cliente, "./cliente/");
+      carrito = nuevo_carro();
+    }
+    else carrito = leer_carro(ruta);
+    printf("Bienvenido de vuelta %s\n", cliente.name);
+    imprimir_catalogo(*catalogo);
+    ingresa_producto(&carrito, catalogo, &borrar);
+    if (borrar) carrito = nuevo_carro();
+    guardar_carro(carrito, ruta);
+  }
   up(semaforo_servidor);
   return 0;
 }

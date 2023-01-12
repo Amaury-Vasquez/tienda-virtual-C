@@ -20,7 +20,7 @@ typedef struct CATALOGO {
 } Catalogo;
 
 Catalogo leer_catalogo(char *);
-Producto obtener_producto(Catalogo, char *id, int, int *existe);
+Producto obtener_producto(Catalogo *, char *id, int, int *existe);
 void imprimir_catalogo(Catalogo);
 void guardar_catalogo(Catalogo, char*);
 

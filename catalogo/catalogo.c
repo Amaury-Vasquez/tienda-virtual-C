@@ -19,14 +19,18 @@ Catalogo leer_catalogo(char *ruta) {
   return catalogo;
 }
 
-Producto obtener_producto(Catalogo catalogo, char *id, int cantidad, int *existe) {
-  Catalogo aux = catalogo;
+Producto obtener_producto(Catalogo *catalogo, char *id, int cantidad, int *existe) {
   int i = 0;
-  while(i < catalogo.num_productos) {
-    if (strcmp(catalogo.productos[i].producto.id, id) == 0) {
-      if (catalogo.productos[i].existencias >= cantidad) {
+  while(i < catalogo->num_productos) {
+    if (strcmp(catalogo->productos[i].producto.id, id) == 0) {
+      if (catalogo->productos[i].existencias >= cantidad) {
         *existe = 1;
-        return catalogo.productos[i].producto;
+        catalogo->productos[i].existencias -= cantidad;
+        return catalogo->productos[i].producto;
+      }
+      else {
+        *existe = -1;
+        return catalogo->productos[i].producto;
       }
     }
     i++;
